@@ -158,5 +158,8 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
 Second part of Airbnb: Joann Vuong
+
+Project contributors: Teresa Amanwachi [Github] (https://github.com/TeeOmyko)
+                      Joseph Njoroge [Github] (https://github.com/kimenyu)
 ## License
 Public Domain. No copy write protection. 

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This file contains the City module
+Create a new view for city objects that handles all default RESTFul API actions:
 """
 from api.v1.views import app_views
 from flask import jsonify, abort, request, make_response

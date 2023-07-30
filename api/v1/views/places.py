@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Create a new view for place objects that handles all default RESTFul API actions:
+This file contains the Place module
 """
 from api.v1.views import app_views
 from flask import jsonify, abort, request, make_response
@@ -10,10 +10,12 @@ from models.city import City
 from models.user import User
 from models.amenity import Amenity
 from models.state import State
+from flasgger.utils import swag_from
 
 
 @app_views.route('/cities/<string:city_id>/places',
                  methods=['GET'], strict_slashes=False)
+@swag_from('documentation/places/get.yml', methods=['GET'])
 def get_all_places(city_id):
     """ list cities by id """
     city = storage.get(City, city_id)
@@ -49,6 +51,7 @@ def del_place(place_id):
 
 @app_views.route('/cities/<string:city_id>/places', methods=['POST'],
                  strict_slashes=False)
+@swag_from('documentation/places/post.yml', methods=['POST'])
 def create_obj_place(city_id):
     """ create new instance """
     city = storage.get(City, city_id)
@@ -72,6 +75,7 @@ def create_obj_place(city_id):
 
 @app_views.route('/places/<string:place_id>', methods=['PUT'],
                  strict_slashes=False)
+@swag_from('documentation/places/put.yml', methods=['PUT'])
 def post_place(place_id):
     """ update by id """
     if not request.get_json():
@@ -88,6 +92,7 @@ def post_place(place_id):
 
 @app_views.route('/places_search', methods=['POST'],
                  strict_slashes=False)
+@swag_from('documentation/places/search.yml', methods=['POST'])
 def search_places_by_id():
     """ search places by id """
     if request.get_json() is None:
